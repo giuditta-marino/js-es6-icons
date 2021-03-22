@@ -123,16 +123,22 @@ const colors = [
 console.log(colors);
 
 let myColor;
-icons.forEach((item, i) => {
-	if (item.type == 'animal') {
-		myColor = colors[2]
-	} else if (item.type == 'vegetable') {
+
+icons.forEach((item) => {
+	if (item.type == 'vegetable') {
 		myColor = colors[0]
+		console.log(myColor);
 	} else if (item.type == 'user') {
 		myColor = colors[1]
+		console.log(myColor);
+
+	} else if (item.type == 'animal') {
+		myColor = colors[2]
+		console.log(myColor);
+
 	}
 
-	$('.container i').css('color', 'myColor');
+	$('.container i').css('color', myColor);
 });
 
 
