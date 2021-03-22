@@ -106,40 +106,31 @@ $(document).ready(function(){
 	// 	$('.container').append(template);
 	// 		console.log(template);
 	// });
-
+	const colors = [
+		'yellow', 'purple', 'blue'
+	];
 
 	icons.forEach((item, i) => {
+		let myColor;
+
+		if (item.type == 'vegetable') {
+			myColor = colors[0]
+		} else if (item.type == 'user') {
+			myColor = colors[1]
+		} else if (item.type == 'animal') {
+			myColor = colors[2]
+		}
+
 		$('.container').append(`<div class="card">
 			<div class="icon-name">
-				<i class= "${item.family} ${item.prefix}${item.name}"></i>
+				<i class= "${item.family} ${item.prefix}${item.name} ${myColor}"></i>
 				<p>${item.name}</p>
 			</div>
 		</div>`);
 	});
 
-const colors = [
-	'yellow', 'purple', 'blue'
-];
+
 console.log(colors);
-
-let myColor;
-
-icons.forEach((item) => {
-	if (item.type == 'vegetable') {
-		myColor = colors[0]
-		console.log(myColor);
-	} else if (item.type == 'user') {
-		myColor = colors[1]
-		console.log(myColor);
-
-	} else if (item.type == 'animal') {
-		myColor = colors[2]
-		console.log(myColor);
-
-	}
-
-	$('.container i').css('color', myColor);
-});
 
 
 
