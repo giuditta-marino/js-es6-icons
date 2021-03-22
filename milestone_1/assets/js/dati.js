@@ -99,12 +99,44 @@ const icons = [
 
 $(document).ready(function(){
 
-	const template = $('.template .card').clone();
-	console.log(template);
+
+	//
+	// icons.forEach((item, i) => {
+	// 	const template = $('.template .card').clone();
+	// 	$('.container').append(template);
+	// 		console.log(template);
+	// });
+
 
 	icons.forEach((item, i) => {
-		$('.container').append(template);
+		$('.container').append(`<div class="card">
+			<div class="icon-name">
+				<i class= "${item.family} ${item.prefix}${item.name}"></i>
+				<p>${item.name}</p>
+			</div>
+		</div>`);
 	});
+
+const colors = [
+	'yellow', 'purple', 'blue'
+];
+console.log(colors);
+
+let myColor;
+icons.forEach((item, i) => {
+	if (item.type == 'animal') {
+		myColor = colors[2]
+	} else if (item.type == 'vegetable') {
+		myColor = colors[0]
+	} else if (item.type == 'user') {
+		myColor = colors[1]
+	}
+
+	$('.container i').css('color', 'myColor');
+});
+
+
+
 
 
 
