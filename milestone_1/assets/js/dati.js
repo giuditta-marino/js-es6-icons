@@ -1,4 +1,4 @@
-[
+const icons = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -96,3 +96,24 @@
 		family: 'fas'
 	}
 ];
+
+$(document).ready(function(){
+
+	const template = $('.template .card').clone();
+	console.log(template);
+
+	icons.forEach((item, i) => {
+		$('.container').append(template);
+	});
+
+
+
+
+
+
+
+
+
+
+
+})
