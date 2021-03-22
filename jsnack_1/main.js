@@ -41,7 +41,7 @@ const bikes = [
   });
 
   console.log(biciLeggera);
-
+  $('#bici-leggera').text(`La bici ${biciLeggera.nome} è la più leggera. Il suo peso è di ${biciLeggera.peso} .`)
 
 
 })
